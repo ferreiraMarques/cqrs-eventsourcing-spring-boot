@@ -17,7 +17,7 @@ public class AccountAggregate extends AggreateRoot {
 	private Boolean active;
 
 	private double balance;
-
+	
 	public AccountAggregate(OpenAccountCommand command) {
 		raiseEvent(new AccountOpenedEvent(command.getId(), command.getAccountHolder(), command.getAccountType(),
 				new Date(), command.getOpeningBalance()));
@@ -74,4 +74,9 @@ public class AccountAggregate extends AggreateRoot {
 		this.id = event.getId();
 		this.active = false;
 	}
+
+	public double getBalance() {
+		return balance;
+	}
+
 }

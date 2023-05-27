@@ -4,6 +4,6 @@ import com.banking.cqrs.core.commands.BaseCommand;
 import com.banking.cqrs.core.commands.CommandHandlerMethod;
 
 public interface CommandDispacther {
-	<T extends BaseCommand> void registerHandle(Class <T> type, CommandHandlerMethod<T> handler);
+	<T extends BaseCommand> void registerHandler(Class <T> type, CommandHandlerMethod<T> handler);
 	void send(BaseCommand command);
 }
